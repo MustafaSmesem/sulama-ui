@@ -29,6 +29,10 @@ const props = defineProps({
   content: {
     type: String,
     default: ''
+  },
+  placement: {
+    type: String,
+    default: "left"
   }
 });
 
@@ -40,7 +44,7 @@ const isTooltipHidden = ref(true);
 const calculateTooltipPosition = async () => {
 
   const {x, y, middlewareData, placement} = await computePosition(elementRef.value, tooltipRef.value, {
-    placement: "left",
+    placement: props.placement,
     middleware: [offset(16), flip(), shift({padding: 6}), arrow({element: arrowRef.value})]
   });
 
