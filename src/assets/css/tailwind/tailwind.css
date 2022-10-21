@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind plugins;
+
+@layer base {
+    :root {
+        /*text*/
+        --color-text: #000;
+        --color-text-surface: #025979;
+        --color-text-surface-primary: #00799d;
+        --color-text-surface-secondary: #009b72;
+        --color-text-primary: #fff;
+        --color-text-secondary: #fff;
+        --color-text-active: #9ccc65;
+        --color-text-inactive: #bdbdbd;
+        --color-text-starting: #ffee58;
+        --color-text-stopping: #ffca28;
+        --color-text-error: #ff7043;
+        --color-text-unknown: #add5d2;
+        /*background*/
+        --color-fill: #eee;
+        --color-surface: rgba(184, 255, 255, 0.06);
+        --color-primary: #00799d;
+        --color-primary-hover: #015872;
+        --color-secondary: #009b72;
+        --color-secondary-hover: #006e51;
+    }
+    .theme-neon {
+        /*text*/
+        --color-text: #8a2be2;
+        --color-text-surface: #96ff29;
+        --color-text-surface-primary: #9df149;
+        --color-text-surface-secondary: #ff2493;
+        --color-text-primary: #151515;
+        --color-text-secondary: #242424;
+        --color-text-active: #fff;
+        --color-text-inactive: #fff;
+        --color-text-starting: #fff;
+        --color-text-stopping: #fff;
+        --color-text-error: #930c0c;
+        --color-text-unknown: #729693;
+
+        /*background*/
+        --color-fill: #000000;
+        --color-surface: #9df14910;
+        --color-primary: #9df149;
+        --color-primary-hover: #cdff1a;
+        --color-secondary: #ff2493;
+        --color-secondary-hover: #ff005e;
+    }
+    .theme-dark {
+        /*text*/
+        --color-text: #ccc;
+        --color-text-surface: #fff;
+        --color-text-surface-primary: #28cdff;
+        --color-text-surface-secondary: #8CFF71;
+        --color-text-primary: #151515;
+        --color-text-secondary: #242424;
+        --color-text-active: #fff;
+        --color-text-inactive: #fff;
+        --color-text-starting: #fff;
+        --color-text-stopping: #fff;
+        --color-text-error: #930c0c;
+        --color-text-unknown: #729693;
+
+        /*background*/
+        --color-fill: #121212;
+        --color-surface: #28cdff10;
+        --color-primary: #28cdff;
+        --color-primary-hover: #7df4ff;
+        --color-secondary: #8CFF71;
+        --color-secondary-hover: #c3ffa5;
+    }
+}
+
+.btn {
+    @apply rounded-full font-bold uppercase py-2 px-4 text-xs cursor-pointer tracking-wider;
+}
+
+.btn-primary {
+    @apply btn bg-skin-primary text-skin-primary hover:bg-skin-primary-hover
+}
+
+.btn-primary-out {
+    @apply btn border border-skin-primary text-skin-surface-primary hover:bg-skin-primary hover:text-skin-primary
+}
+
+.btn-secondary {
+    @apply btn bg-skin-secondary text-skin-secondary hover:bg-skin-secondary-hover
+}
+
+.btn-secondary-out {
+    @apply btn border border-skin-secondary text-skin-surface-secondary hover:bg-skin-secondary hover:text-skin-secondary
+}
+
+.sidebar-item {
+    @apply text-skin-primary hover:bg-skin-fill hover:text-skin-surface-primary rounded-xl
+}

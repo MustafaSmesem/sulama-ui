@@ -1,30 +1,28 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div :class="theme" class="min-h-screen min-w-screen flex bg-skin-fill">
+    <SideBar />
+    <div class="content flex flex-col flex-1">
+      <Header :current-page="currentPage" class="ml-16 md:ml-0"/>
+      <router-view class="ml-16 md:ml-0 px-4 py-10 flex-1"/>
+    </div>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup>
+import {ref, watch} from "vue";
+import {useRoute} from 'vue-router';
 
-nav {
-  padding: 30px;
-}
+import SideBar from "@/components/SideBar.vue";
+import Header from "@/layout/HeaderLayout.vue";
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+const route = useRoute();
+watch(route, (newValue) => {
+  currentPage.value = newValue.name;
+  // console.log(newValue.name)
+});
+const theme = ref('');
+const currentPage = ref('Dashboard');
+</script>
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style scoped>
 </style>
