@@ -95,5 +95,5 @@
 }
 
 .sidebar-item {
-    @apply text-skin-primary hover:bg-skin-fill hover:text-skin-surface-primary rounded-xl
+    @apply flex items-center cursor-pointer text-skin-primary hover:bg-skin-fill hover:text-skin-surface-primary rounded-xl
 }
